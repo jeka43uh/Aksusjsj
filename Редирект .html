@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>Please wait 3 seconds for the link to open automatically, or use the buttons below.</p>
+    <button id="open-link">Open Link</button>
+    <button id="copy-link">Copy Link</button>
+    
+    <script>
+        const refLink = "https://www1.affhone.fyi/click?pid=17228&offer_id=712";  // Ваша реферальная ссылка
+        const safeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";  // Ссылка на безопасный сайт (например, YouTube)
+
+        // Таймер для автоматического открытия ссылки
+        setTimeout(() => {
+            window.location.href = refLink;  // Переход на вашу реферальную ссылку через безопасную
+        }, 3000);
+
+        // Кнопка для открытия ссылки вручную
+        document.getElementById("open-link").onclick = () => {
+            window.location.href = refLink;
+        };
+
+        // Кнопка для копирования ссылки
+        document.getElementById("copy-link").onclick = () => {
+            navigator.clipboard.writeText(refLink).then(() => {
+                alert("Link copied to clipboard!");
+            });
+        };
+    </script>
+</body>
+</html>
